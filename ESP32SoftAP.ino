@@ -1,16 +1,12 @@
-/*********
- This code is from Rui Santos ,i do some changes to work this code for 4 ch. relay module 
- 
-  Complete project details at https://randomnerdtutorials.com  
-*********/
+
 /****** This code is for esp32 for using esp8266 just replace <wifi.h> into <esp8266wifi.h> , also change the  output GPIO pins ****/
 // Load Wi-Fi library
 #include <WiFi.h>
 
 // Replace with your network credentials
 // to create its own wifi network
-const char* ssid     = "ESP32-Access-Point";
-const char* password = "123456789";
+const char* ssid     = "ESP32-Access-Point";// Accesspoint name DDID
+const char* password = "123456789";// password
 
 // Set web server port number to 80
 WiFiServer server(80);
@@ -27,10 +23,10 @@ String output14State = "off";
 String output27State = "off";
 
 // Assign output variables to GPIO pins
-const int output12 = 12;
-const int output13 = 13;
-const int output14 = 14;
-const int output27 = 27;
+const int output12 = 12;//connect Relay1 to GPIO pin 12 of ESP32
+const int output13 = 13;//connect Relay2 to GPIO pin 13 of ESP32
+const int output14 = 14;//connect Relay3 to GPIO pin 14 of ESP32
+const int output27 = 27;//connect Relay4 to GPIO pin 27 of ESP32
 void setup() {
   Serial.begin(115200);
   // Initialize the output variables as outputs
